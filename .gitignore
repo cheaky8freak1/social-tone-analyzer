@@ -6,6 +6,31 @@ __pycache__/
 # C extensions
 *.so
 
+# DVC
+.dvc/
+**/.dvc/tmp
+*.dvc
+!*.dvc
+
+# MLflow
+mlruns/
+*.db
+
+# ONNX/TensorRT
+*.onnx
+*.engine
+*.plan
+*.trt
+
+# Data
+*.csv
+*.parquet
+*.h5
+*.npy
+*.npz
+*.pkl
+*.joblib
+
 # Distribution / packaging
 .Python
 build/
