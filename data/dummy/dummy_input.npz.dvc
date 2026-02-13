@@ -1,0 +1,5 @@
+outs:
+- md5: 20b8fcbcd096e43e0d6f553d9ddc63e0
+  size: 5618
+  hash: md5
+  path: dummy_input.npz
