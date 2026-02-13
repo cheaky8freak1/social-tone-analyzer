@@ -1,0 +1,40 @@
+# .pre-commit-config.yaml
+repos:
+  # ===== Базовые хуки от pre-commit =====
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-json
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # ===== ISORT (сортировка импортов) =====
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+
+  # ===== BLACK (форматирование) =====
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        args: [--line-length=99]
+        language_version: python3
+
+  # ===== FLAKE8 (линтинг) =====
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [
+            'flake8-bugbear',
+            'pep8-naming',
+            'flake8-pyproject',  # чтобы flake8 читал pyproject.toml
+        ]
