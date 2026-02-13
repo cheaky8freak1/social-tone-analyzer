@@ -1,0 +1,18 @@
+# Удаляем пустую папку .dvc
+rm -rf .dvc
+
+# Создаём структуру вручную
+mkdir -p .dvc
+cat > .dvc/config << EOF
+[core]
+    remote = local_storage
+['remote "local_storage"']
+    url = /home/semashiretvoegodoma/dvc_storage
+EOF
+
+echo "cache" > .dvc/.gitignore
+echo "tmp" >> .dvc/.gitignore
+
+# Добавляем в Git
+git add .dvc/config .dvc/.gitignore
+git commit -m "Initialize DVC with manual config"

@@ -1,0 +1,23 @@
+data:
+  data_dir: data/raw
+  batch_size: 64
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42
+model:
+  img_dim: 512
+  txt_dim: 768
+  hidden_dim: 256
+  num_classes: 50
+  lr: 0.001
+  dropout: 0.2
+training:
+  max_epochs: 20
+  early_stop_patience: 5
+  checkpoint_dir: checkpoints
+  test_after_training: true
+logging:
+  tracking_uri: http://127.0.0.1:8080
+  experiment_name: WarCov_Multimodal
+  log_every_n_steps: 10

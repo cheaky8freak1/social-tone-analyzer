@@ -11,6 +11,8 @@ __pycache__/
 **/.dvc/tmp
 *.dvc
 !*.dvc
+.dvc/cache
+.dvc/tmp
 
 # MLflow
 mlruns/
@@ -50,6 +52,12 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+checkpoints/
+models/*.onnx
+models/*.plan
+models/*.onnx.data
+*.ckpt
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

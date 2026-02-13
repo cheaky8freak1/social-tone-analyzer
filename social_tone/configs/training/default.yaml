@@ -1,0 +1,4 @@
+max_epochs: 20
+early_stop_patience: 5
+checkpoint_dir: checkpoints
+test_after_training: true

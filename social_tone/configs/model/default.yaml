@@ -1,0 +1,6 @@
+img_dim: 512
+txt_dim: 768
+hidden_dim: 256
+num_classes: 50
+lr: 0.001
+dropout: 0.2

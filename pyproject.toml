@@ -6,8 +6,16 @@ authors = [
     {name = "zotovsem",email = "semenzotov17@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.15"
 dependencies = [
+    "dvc (>=3.66.1,<4.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "mlflow (>=3.9.0,<4.0.0)",
+    "torch (>=2.10.0,<3.0.0)",
+    "torchvision (>=0.25.0,<0.26.0)",
+    "pytorch-lightning (>=2.6.1,<3.0.0)",
+    "torchmetrics (>=1.8.2,<2.0.0)",
+    "matplotlib (>=3.10.8,<4.0.0)"
 ]
 
 
@@ -19,13 +27,16 @@ build-backend = "poetry.core.masonry.api"
 packages = [{include = "social_tone"}]
 
 
+[tool.poetry.dependencies]
+torch = {source = "pytorch-cpu"}
+torchvision = {source = "pytorch-cpu"}
 [dependency-groups]
 dev = [
     "pre-commit (>=4.5.1,<5.0.0)",
-    "black (>=26.1.0,<27.0.0)",
     "isort (>=7.0.0,<8.0.0)",
     "flake8 (>=7.3.0,<8.0.0)",
-    "pep8-naming (>=0.15.1,<0.16.0)"
+    "pep8-naming (>=0.15.1,<0.16.0)",
+    "black (>=24.10.0,<25.0.0)"
 ]
 
 [tool.black]
@@ -70,3 +81,8 @@ exclude = [
 per-file-ignores = [
     "__init__.py:F401",
 ]
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
